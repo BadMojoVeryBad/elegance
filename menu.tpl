@@ -1,12 +1,12 @@
 <div class="scrollspy">
   <div class="brand">
     <div class="logo fallback">
-      <img src="./logo.png" alt="{{ .Name }}" class="logo img-responsive" />
+      <!-- <img src="./logo.png" alt="{{ .Name }}" class="logo img-responsive" /> -->
     </div>
-    <h1>{{ .Name }}</h1>
+    <h2>{{ .Name }}</h2>
   </div>
 
-  <ul id="main-menu" data-spy="affix" class="nav">
+  <ul id="main-menu" class="nav">
     <li>
       <a href="#doc-general-notes">General notes</a>
     </li>

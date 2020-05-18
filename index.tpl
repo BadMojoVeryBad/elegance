@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link href="favicon.ico" rel=icon type="image/ico"/>
     <title>{{ .Name }}</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css" rel="stylesheet">
@@ -52,7 +51,7 @@
   </div>
 
     {{ range .Requests }}
-      { { template "request.tpl"  .}}
+      {{ template "request.tpl"  .}}
     {{ end }}
 
     {{ range .Folders }}

@@ -7,7 +7,7 @@ body {
     transition: linear left 0.1s;
     background-color: #f8f8f8;
     color: #808080;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 h1 {
@@ -18,6 +18,7 @@ h1 {
 
 h1, h2, h3, h4 {
     color: #505050;
+    font-weight: bold;
 }
 
 h2:after {
@@ -44,7 +45,10 @@ h5 {
 .row > h3,
 .row > h4,
 .row > h5 {
-  padding: 0 15px;
+  padding: 6px 0;
+  font-weight: bold;
+  letter-spacing: 0.05px;
+  margin: 10px 15px;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -131,10 +135,6 @@ pre code {
 
 }
 
-#doc-general-notes {
-    font-weight: normal;
-}
-
 .response-text-sample {
     padding: 0px !important;
 }
@@ -154,24 +154,32 @@ pre code {
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
-    width: 250px;
-    height: 100% !important;
-    margin-left: -250px;
-    overflow-y: auto;
+    left: 300px;
+    width: 300px;
+    margin-left: -300px;
     overflow-x: hidden;
     background: #333333;
     padding-top: 20px;
+    overflow-y: auto !important;
+    height: 100vh !important;
+    padding-bottom: 20px;
 }
 
 #sidebar-wrapper .brand .logo {
   max-width: 150px;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
-#sidebar-wrapper .brand h1 {
+#sidebar-wrapper .brand h2 {
   color: #f3f3f3;
   font-size: 2em;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 0;
+}
+
+#sidebar-wrapper .scrollspy {
+    margin-bottom: 20px;
 }
 
 #sidebar-wrapper ul {
@@ -180,7 +188,6 @@ pre code {
 }
 
 #sidebar-wrapper ul li {
-    margin-right: 10px;
     font-weight: bold;
 }
 
@@ -191,8 +198,16 @@ pre code {
 
 #sidebar-wrapper ul li a {
     display: block;
-    color: #b3b3b3; // #ECF0F1;
+    color: #b3b3b3;
     padding: 6px 15px;
+    line-height: 1.25;
+    display: flex;
+}
+
+#sidebar-wrapper ul li a > span {
+    display: block;
+    width: 58px;
+    flex-shrink: 0;
 }
 
 #sidebar-wrapper .icon {
@@ -251,7 +266,7 @@ pre code {
 
 @media (min-width:768px) {
     #page-content-wrapper {
-        padding-left:250px;
+        padding-left: 300px;
     }
 }
 
@@ -328,6 +343,11 @@ pre:hover {
   margin-bottom: 50px;
 }
 
+.response h5, .request h5 {
+    opacity: 0.6;
+    font-weight: bold;
+}
+
 .headers dl {
   margin: 15px 0;
 }
@@ -344,6 +364,34 @@ pre:hover {
 .split .left,
 .split .right {
   padding: 0 15px;
+}
+
+.payload {
+    padding-bottom: 70px;
+}
+
+@media (max-width: 1199px) {
+    .payload {
+        padding-bottom: 0;
+    }
+
+    .split .right {
+        margin-bottom: 70px;
+    }
+}
+
+.seperator {
+    text-align: center;
+    opacity: 0.2;
+    font-size: 32px;
+}
+
+#doc-api-detail {
+    padding-top: 70px;
+}
+
+dd {
+    margin-bottom: 10px;
 }
 
 @media (min-width: 1200px) {

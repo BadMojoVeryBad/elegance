@@ -18,7 +18,7 @@ Used components:
 
 Download theme from repository
 ```
-$ postmanerator themes get https://github.com/runateam/elegance.git
+$ postmanerator themes get https://github.com/BadMojoVeryBad/elegance.git
 ```
 
 Confirm that it is available on your local machine
@@ -34,8 +34,6 @@ $ postmanerator -collection=main.postman_collection.json \
 > -environment=local.postman_environment.json \
 > -theme=elegance -output=./build/index.html
 ```
-
-You can add your own logo in the generated documentation, just copy the `logo.png` file to the directory with the generated documentation (next to the `index.html`).
 
 # License
 

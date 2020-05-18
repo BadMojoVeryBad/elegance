@@ -18,7 +18,7 @@
 
   <!-- BEGIN iterate through all requests -->
   {{ range $folder.Requests }}
-  {{ $req := . }}
+    {{ $req := . }}
     <div class="split">
       <div class="left">
         <div class="headling row">
@@ -45,7 +45,7 @@
 
         <div class="headers row">
           <h5>Headers</h5>
-          {{ if eq (len $req.Headers) 0 }}
+          {{ if ne (len $req.Headers) 0 }}
             <dl>
               {{ range $req.Headers }}
                 <dt class="name col-md-3 col-xs-12">{{ .Name }}</dt>
@@ -64,10 +64,19 @@
               {{ with $payload := indentJSON $req.PayloadRaw }}
                 <pre><code>{{ $payload }}</code></pre>
               {{ end }}
+            {{ else if $req.PayloadParams }}
+              <table>
+                  <tr><td><strong>Parameter Name</strong></td><td><strong>Parameter Value</strong></td></tr>
+                {{ range $req.PayloadParams }}
+                  <tr><td>{{ .Name }}</td><td>{{ .Value }}</td></tr>
+                {{ end }}
+              </table>
             {{ else }}
               None
             {{ end }}
           </div>
+
+          <div class="seperator">&bull; &bull; &bull;</div>
         </div>
       </div>
 
